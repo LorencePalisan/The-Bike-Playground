@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../assets/tbp logo-01.png";
 import "./Nav.css";
@@ -13,10 +13,17 @@ const links = [
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const close = () => setOpen(false);
 
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <header className="nav">
+    <header className={`nav${scrolled ? " nav--scrolled" : ""}`}>
       <div className="nav__inner container">
         <NavLink to="/" className="nav__logo" onClick={close}>
           <img src={logo} alt="The Bike Playground" className="nav__logo-img" />
