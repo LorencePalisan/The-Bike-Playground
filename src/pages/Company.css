@@ -1,0 +1,217 @@
+/* Highlights */
+.company-highlights {
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border);
+  padding: 32px 0;
+}
+
+.company-highlights__grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.company-highlight {
+  background: var(--bg-surface);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 28px 16px;
+}
+
+.company-highlight__stat {
+  font-family: "Barlow Condensed", system-ui, sans-serif;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: 900;
+  color: var(--accent);
+  line-height: 1;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.company-highlight__label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  font-family: "Barlow Condensed", system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+/* Pillars */
+.company-pillars {
+  padding: 96px 0;
+}
+
+.company-pillars__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 32px;
+}
+
+.pillar-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--accent);
+  border-radius: var(--radius-md);
+  padding: 40px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pillar-card__heading {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+}
+
+.pillar-card__body {
+  color: var(--text);
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+/* FLY Racing */
+.company-fly {
+  background: var(--bg-raised);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 96px 0;
+}
+
+.company-fly__inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 64px;
+  align-items: center;
+}
+
+.company-fly__content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 560px;
+}
+
+.company-fly__content h2 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+}
+
+.company-fly__content > p {
+  color: var(--text);
+  line-height: 1.7;
+}
+
+.company-fly__features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.company-fly__features li {
+  font-size: 0.9rem;
+  color: var(--text);
+  padding-left: 22px;
+  position: relative;
+}
+
+.company-fly__features li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.company-fly__emblem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+  border: 3px solid var(--accent);
+  border-radius: 50%;
+  text-align: center;
+  flex-shrink: 0;
+  gap: 2px;
+}
+
+.company-fly__year {
+  font-family: "Barlow Condensed", system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.company-fly__brand {
+  font-family: "Barlow Condensed", system-ui, sans-serif;
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: var(--accent);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.company-fly__sub {
+  font-family: "Barlow Condensed", system-ui, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-strong);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+/* CTA */
+.company-cta {
+  padding: 96px 0;
+}
+
+.company-cta__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+}
+
+.company-cta__inner h2 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+}
+
+.company-cta__inner p {
+  color: var(--text);
+  max-width: 480px;
+}
+
+.company-cta__btns {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+  .company-highlights__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .company-fly__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .company-fly__emblem {
+    display: none;
+  }
+}
